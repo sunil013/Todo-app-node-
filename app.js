@@ -18,8 +18,8 @@ const initializeDBAndServer = async () => {
       filename: dbPath,
       driver: sqlite3.Database,
     });
-    app.listen(3000, () => {
-      console.log("Server Running at http://localhost:3000/");
+    app.listen(process.env.PORT || 3004, () => {
+      console.log("Server Running at http://localhost:3004/");
     });
   } catch (e) {
     console.log(`DB Error: ${e.message}`);
@@ -198,7 +198,7 @@ const hasCategory = (requestQuery) => {
   return requestQuery.category !== undefined;
 };
 
-// Get todo API
+// Get todos API
 app.get(
   "/todos/",
   authenticateStatusQuery,

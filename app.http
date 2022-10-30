@@ -1,4 +1,6 @@
+GET http://localhost:3004/todos/
 
+###
 GET http://localhost:3000/todos/?category=HOME
 
 ###
