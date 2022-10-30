@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 
 const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
@@ -7,6 +8,7 @@ const { format } = require("date-fns");
 var isValid = require("date-fns/isValid");
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const dbPath = path.join(__dirname, "todoApplication.db");
 
